@@ -22,11 +22,11 @@ def get_employee_details():
     # If the user didn't type anything, ask them to.
     if not name:
         flash("Please type in a first name.")
-
+  
     # If the name isn't in our directory, flash a message to the user.
     elif name.lower() not in employee_directory:
         flash("{name} not found.".format(name=name))
-
+   
     # We have a name, and it's in our directory. Return that info.
     else:
         employee_info = employee_directory.get(name.lower())
@@ -35,7 +35,7 @@ def get_employee_details():
     # If we didn't return the employee details page, send the user back to the
     # page they were on before.
     return(redirect(request.referrer))
-
+  
 
 if __name__ == "__main__":
     app.debug = True
